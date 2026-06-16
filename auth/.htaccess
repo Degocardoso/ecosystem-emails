@@ -1,0 +1,3 @@
+# Diretório interno — acesso HTTP direto proibido.
+# Estes arquivos são incluídos pelo PHP, nunca acessados via URL.
+Require all denied

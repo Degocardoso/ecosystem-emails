@@ -1,0 +1,144 @@
+/* ==========================================================================
+   Ecossistema de E-mails FECAP — Identidade visual compartilhada
+   Paleta oficial extraida das logos institucionais:
+     Verde escuro  #023c2c   |  Verde claro  #00e387   |  Verde medio #60bf84
+   ========================================================================== */
+
+:root {
+  --fecap-verde-escuro: #023c2c;
+  --fecap-verde-escuro-hover: #035a41;
+  --fecap-verde-claro: #00e387;
+  --fecap-verde-medio: #60bf84;
+  --fecap-fundo: #f4f7f6;
+  --fecap-texto: #1f2a26;
+  --fecap-borda: #e3e9e6;
+  --fecap-cinza: #6c757d;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--fecap-fundo);
+  color: var(--fecap-texto);
+}
+
+a { color: var(--fecap-verde-escuro); }
+
+/* ----- Barra superior ----- */
+.fecap-topbar {
+  background: linear-gradient(90deg, var(--fecap-verde-escuro) 0%, #045038 60%, var(--fecap-verde-claro) 140%);
+  color: #fff;
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+.fecap-topbar .brand { display: flex; align-items: center; gap: 0.85rem; }
+.fecap-topbar .brand img { height: 38px; display: block; }
+.fecap-topbar .brand span { font-weight: 600; letter-spacing: .2px; font-size: 1.05rem; }
+.fecap-topbar .userbox { display: flex; align-items: center; gap: 1rem; font-size: .92rem; }
+.fecap-topbar .userbox .badge-role {
+  background: rgba(255, 255, 255, .18);
+  padding: .25rem .6rem;
+  border-radius: 999px;
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+.fecap-topbar a.logout {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, .55);
+  padding: .35rem .85rem;
+  border-radius: .5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background .15s ease;
+}
+.fecap-topbar a.logout:hover { background: rgba(255, 255, 255, .15); }
+
+/* ----- Conteúdo ----- */
+.fecap-container { max-width: 1080px; margin: 2.5rem auto; padding: 0 1.25rem; }
+.fecap-page-title { color: var(--fecap-verde-escuro); font-weight: 700; margin-bottom: .35rem; }
+.fecap-page-sub { color: var(--fecap-cinza); margin-top: 0; margin-bottom: 2rem; }
+
+/* ----- Cards do painel ----- */
+.fecap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+.fecap-card {
+  background: #fff;
+  border: 1px solid var(--fecap-borda);
+  border-radius: .85rem;
+  padding: 1.75rem;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .05);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.fecap-card:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(2, 60, 44, .14); border-color: var(--fecap-verde-medio); }
+.fecap-card .icon {
+  width: 52px; height: 52px; border-radius: .7rem;
+  background: linear-gradient(135deg, var(--fecap-verde-escuro), var(--fecap-verde-claro));
+  color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.6rem;
+}
+.fecap-card h3 { margin: .4rem 0 0; color: var(--fecap-verde-escuro); }
+.fecap-card p { margin: 0; color: var(--fecap-cinza); font-size: .95rem; }
+.fecap-card.disabled { opacity: .55; pointer-events: none; filter: grayscale(.3); }
+
+/* ----- Botões ----- */
+.fecap-btn {
+  display: inline-block; border: none; cursor: pointer;
+  background: var(--fecap-verde-escuro); color: #fff;
+  padding: .7rem 1.4rem; border-radius: .55rem; font-weight: 600; font-size: 1rem;
+  text-decoration: none; transition: background .15s ease;
+}
+.fecap-btn:hover { background: var(--fecap-verde-escuro-hover); color: #fff; }
+.fecap-btn.secondary { background: #fff; color: var(--fecap-verde-escuro); border: 1px solid var(--fecap-verde-escuro); }
+.fecap-btn.secondary:hover { background: var(--fecap-fundo); }
+.fecap-btn.danger { background: #c0392b; }
+.fecap-btn.danger:hover { background: #a5281c; }
+.fecap-btn.block { display: block; width: 100%; text-align: center; }
+
+/* ----- Login ----- */
+.fecap-login-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+  background: radial-gradient(circle at 20% 20%, #06513a 0%, var(--fecap-verde-escuro) 55%, #012018 100%); }
+.fecap-login-card { background: #fff; width: 100%; max-width: 410px; border-radius: 1rem; padding: 2.5rem 2.25rem;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .35); }
+.fecap-login-card .logo { text-align: center; margin-bottom: 1.5rem; }
+.fecap-login-card .logo img { height: 56px; }
+.fecap-login-card h1 { font-size: 1.4rem; text-align: center; color: var(--fecap-verde-escuro); margin: .25rem 0 1.5rem; }
+
+/* ----- Formulários ----- */
+.fecap-field { margin-bottom: 1.1rem; }
+.fecap-field label { display: block; font-weight: 600; margin-bottom: .35rem; font-size: .92rem; }
+.fecap-input, .fecap-select {
+  width: 100%; padding: .7rem .85rem; border: 1px solid #cdd6d2; border-radius: .55rem; font-size: 1rem;
+  background: #fff; color: var(--fecap-texto);
+}
+.fecap-input:focus, .fecap-select:focus { outline: none; border-color: var(--fecap-verde-escuro);
+  box-shadow: 0 0 0 .2rem rgba(0, 227, 135, .25); }
+
+/* ----- Alertas ----- */
+.fecap-alert { padding: .8rem 1rem; border-radius: .55rem; margin-bottom: 1.1rem; font-size: .95rem; }
+.fecap-alert.error { background: #fdecea; color: #8a1c12; border: 1px solid #f5c6c0; }
+.fecap-alert.success { background: #e7f7ef; color: #0c5b3c; border: 1px solid #b6e6cd; }
+.fecap-alert.info { background: #e9f5ff; color: #0b4a73; border: 1px solid #bfe1f7; }
+
+/* ----- Tabelas ----- */
+.fecap-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: .6rem; overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .05); }
+.fecap-table th { background: var(--fecap-verde-escuro); color: #fff; text-align: left; padding: .8rem 1rem; font-size: .9rem; }
+.fecap-table td { padding: .75rem 1rem; border-top: 1px solid var(--fecap-borda); font-size: .93rem; }
+.fecap-table tr:hover td { background: #f7faf9; }
+.tag { display: inline-block; padding: .15rem .55rem; border-radius: 999px; font-size: .75rem; font-weight: 600; }
+.tag.admin { background: #023c2c; color: #fff; }
+.tag.criador { background: #00e387; color: #023c2c; }
+.tag.leitor { background: #60bf84; color: #023c2c; }
+.tag.on { background: #e7f7ef; color: #0c5b3c; }
+.tag.off { background: #fdecea; color: #8a1c12; }
+
+.fecap-footer { text-align: center; color: var(--fecap-cinza); font-size: .82rem; padding: 2rem 1rem; }

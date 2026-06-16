@@ -1,0 +1,26 @@
+# ============================================================
+#  Ecossistema de E-mails FECAP — proteções de servidor (Apache)
+# ============================================================
+
+# ----- Cabeçalhos de segurança -----
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set X-XSS-Protection "1; mode=block"
+    # Ative o HSTS apenas quando todo o site estiver sob HTTPS:
+    # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# ----- Bloqueia listagem de diretórios -----
+Options -Indexes
+
+# ----- Bloqueia o acesso direto a arquivos sensíveis -----
+<FilesMatch "(^\.|\.env$|\.env\..*|\.md$|\.sql$|\.lock$|\.dist$|composer\.json|package\.json|install\.sh)">
+    Require all denied
+</FilesMatch>
+
+# ----- Garante que o .env nunca seja servido -----
+<Files ".env">
+    Require all denied
+</Files>

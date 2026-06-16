@@ -1,0 +1,29 @@
+# ============================================================
+#  Ecossistema de E-mails FECAP — arquivos ignorados pelo Git
+# ============================================================
+
+# ----- Dependências (instaladas via composer install) -----
+/vendor/
+/dynamics-email-report/vendor/
+
+# ----- Variáveis de ambiente / segredos (NUNCA versionar) -----
+.env
+.env.*
+!.env.example
+
+# ----- Logs -----
+*.log
+/dynamics-email-report/logs/*.log
+
+# ----- Storage em arquivo (sessões e cache do módulo de relatórios) -----
+/dynamics-email-report/storage/sessions/*
+/dynamics-email-report/storage/cache/*
+!**/.gitkeep
+
+# ----- Sistema operacional / editores -----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*~
